@@ -51,15 +51,29 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h0F-ed-26q">
+                                <rect key="frame" x="20" y="47" width="350" height="32"/>
+                                <color key="backgroundColor" red="0.69481145070000006" green="0.86078917980000003" blue="0.4833568251" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <segments>
+                                    <segment title="Легко"/>
+                                    <segment title="Средне"/>
+                                    <segment title="Сложно"/>
+                                    <segment title="Безумно"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y1L-3z-zSN"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="h0F-ed-26q" firstAttribute="leading" secondItem="Y1L-3z-zSN" secondAttribute="leading" constant="20" id="5DH-1d-Sas"/>
                             <constraint firstItem="kWX-Ot-LEU" firstAttribute="centerY" secondItem="Y1L-3z-zSN" secondAttribute="centerY" id="6Al-Zt-5aL"/>
                             <constraint firstItem="kWX-Ot-LEU" firstAttribute="centerX" secondItem="Y1L-3z-zSN" secondAttribute="centerX" id="J4A-q8-2cW"/>
+                            <constraint firstItem="Y1L-3z-zSN" firstAttribute="trailing" secondItem="h0F-ed-26q" secondAttribute="trailing" constant="20" id="QzF-mY-eoQ"/>
+                            <constraint firstItem="h0F-ed-26q" firstAttribute="top" secondItem="Y1L-3z-zSN" secondAttribute="top" id="ssr-3i-9sd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="difficultyControl" destination="h0F-ed-26q" id="zkL-pg-sdg"/>
                         <outlet property="lastRecordLabel" destination="jL0-us-Gaa" id="msI-G1-ova"/>
                     </connections>
                 </viewController>
@@ -81,21 +95,21 @@
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="recordCell" textLabel="vCX-EI-R8v" detailTextLabel="KXu-5s-Hfr" style="IBUITableViewCellStyleValue1" id="Zii-W2-eQp">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="47.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zii-W2-eQp" id="hCP-Zh-K6W">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="47.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vCX-EI-R8v">
-                                                    <rect key="frame" x="20" y="14.999999999999998" width="31.666666666666668" height="19.333333333333332"/>
+                                                    <rect key="frame" x="20" y="12.999999999999998" width="31.666666666666668" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KXu-5s-Hfr">
-                                                    <rect key="frame" x="328.33333333333331" y="14.999999999999998" width="41.666666666666664" height="19.333333333333332"/>
+                                                    <rect key="frame" x="328.33333333333331" y="12.999999999999998" width="41.666666666666664" height="19.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" systemColor="systemBlueColor"/>

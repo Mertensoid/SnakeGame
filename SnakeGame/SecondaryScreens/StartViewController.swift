@@ -8,6 +8,7 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    @IBOutlet weak var difficultyControl: UISegmentedControl!
     @IBOutlet weak var lastRecordLabel: UILabel!
     
     override func viewDidLoad() {
@@ -20,6 +21,18 @@ class StartViewController: UIViewController {
                 return
             }
             destination.delegate = self
+            switch difficultyControl.selectedSegmentIndex {
+            case 0:
+                destination.difficulty = .easy
+            case 1:
+                destination.difficulty = .normal
+            case 2:
+                destination.difficulty = .hard
+            case 3:
+                destination.difficulty = .insane
+            default:
+                destination.difficulty = .normal
+            }
         default:
             return
         }

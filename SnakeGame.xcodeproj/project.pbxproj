@@ -22,6 +22,9 @@
 		846FC3AD29150E14001629CF /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC3AC29150E14001629CF /* RecordsViewController.swift */; };
 		846FC3B029152427001629CF /* RecordsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC3AF29152427001629CF /* RecordsSingleton.swift */; };
 		846FC3B329153419001629CF /* RecordsCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FC3B229153419001629CF /* RecordsCaretaker.swift */; };
+		84CB6A492916426E009D9499 /* SnakeSpeedStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB6A482916426E009D9499 /* SnakeSpeedStrategy.swift */; };
+		84CB6A4B29164294009D9499 /* AppleAppearenceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB6A4A29164294009D9499 /* AppleAppearenceStrategy.swift */; };
+		84CB6A4D291642FC009D9499 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB6A4C291642FC009D9499 /* Difficulty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		846FC3AC29150E14001629CF /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
 		846FC3AF29152427001629CF /* RecordsSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSingleton.swift; sourceTree = "<group>"; };
 		846FC3B229153419001629CF /* RecordsCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCaretaker.swift; sourceTree = "<group>"; };
+		84CB6A482916426E009D9499 /* SnakeSpeedStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeSpeedStrategy.swift; sourceTree = "<group>"; };
+		84CB6A4A29164294009D9499 /* AppleAppearenceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAppearenceStrategy.swift; sourceTree = "<group>"; };
+		84CB6A4C291642FC009D9499 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 				846FC3842915075A001629CF /* AppDelegate.swift */,
 				846FC3AE29152408001629CF /* Entity */,
 				846FC3B1291533F1001629CF /* Service */,
+				84CB6A4729164240009D9499 /* Strategies */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				846FC3AF29152427001629CF /* RecordsSingleton.swift */,
+				84CB6A4C291642FC009D9499 /* Difficulty.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -140,6 +148,15 @@
 				846FC3B229153419001629CF /* RecordsCaretaker.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		84CB6A4729164240009D9499 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				84CB6A4A29164294009D9499 /* AppleAppearenceStrategy.swift */,
+				84CB6A482916426E009D9499 /* SnakeSpeedStrategy.swift */,
+			);
+			path = Strategies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CB6A492916426E009D9499 /* SnakeSpeedStrategy.swift in Sources */,
 				846FC3A629150A5E001629CF /* GameViewController.swift in Sources */,
+				84CB6A4D291642FC009D9499 /* Difficulty.swift in Sources */,
 				846FC3B329153419001629CF /* RecordsCaretaker.swift in Sources */,
 				846FC3A429150A31001629CF /* GameScene.swift in Sources */,
 				846FC3B029152427001629CF /* RecordsSingleton.swift in Sources */,
@@ -221,6 +240,7 @@
 				846FC39C29150880001629CF /* Apple.swift in Sources */,
 				846FC3A2291509F9001629CF /* Snake.swift in Sources */,
 				846FC3AB29150E00001629CF /* StartViewController.swift in Sources */,
+				84CB6A4B29164294009D9499 /* AppleAppearenceStrategy.swift in Sources */,
 				846FC39E2915089E001629CF /* SnakeBodyPart.swift in Sources */,
 				846FC3A829150A95001629CF /* CollisionCategories.swift in Sources */,
 				846FC3852915075A001629CF /* AppDelegate.swift in Sources */,

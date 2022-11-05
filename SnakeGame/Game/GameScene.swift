@@ -17,6 +17,19 @@ final class GameScene: SKScene {
     /// Яблоко в игре.
     var apple: Apple?
     
+    private var appleAppearenceStrategy: AppleAppearenceStrategy
+    private var snakeSpeedStrategy: SnakeSpeedStrategy
+    
+    init(size: CGSize, appleAppearenceStrategy: AppleAppearenceStrategy, snakeSpeedStrategy: SnakeSpeedStrategy) {
+        self.appleAppearenceStrategy = appleAppearenceStrategy
+        self.snakeSpeedStrategy = snakeSpeedStrategy
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - SKScene
     
     override func didMove(to view: SKView) {
@@ -123,11 +136,10 @@ final class GameScene: SKScene {
     
     fileprivate func createApple(){
         guard let view = self.view, let scene = view.scene else { return }
-        let randX  = CGFloat(arc4random_uniform(UInt32(scene.frame.maxX - 5)) + 1)
-        let randY  = CGFloat(arc4random_uniform(UInt32(scene.frame.maxY - 5)) + 1)
-        let apple = Apple(position: CGPoint(x: randX, y: randY))
-        self.apple = apple
-        self.addChild(apple)
+        if let apple = appleAppearenceStrategy.createApple(in: scene.frame).first {
+            self.apple = apple
+            self.addChild(apple)
+        }
     }
     
     fileprivate func restartGame() {
@@ -170,6 +182,9 @@ extension GameScene: SKPhysicsContactDelegate {
         self.apple = nil
         //создаем новое яблоко
         createApple()
+        if let snake = snake {
+            snakeSpeedStrategy.increaseSnakeSpeed(snake: snake)
+        }
     }
     
     private func headDidCollideWall(_ contact: SKPhysicsContact) {

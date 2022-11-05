@@ -15,12 +15,33 @@ protocol GameDelegate: AnyObject {
 
 final class GameViewController: UIViewController {
 
-    // MARK: - Life cycle
     weak var delegate: GameDelegate?
+    var difficulty: Difficulty = .normal
     
+    private var appleAppearenceStrategy: AppleAppearenceStrategy {
+        switch difficulty {
+        case .easy:
+            return FixedAppleAppearenceStrategy()
+        case .normal, .hard, .insane:
+            return RandomAppleAppearenceStrategy()
+        }
+    }
+    
+    private var snakeSpeedStrategy: SnakeSpeedStrategy {
+        switch difficulty {
+        case .easy, .normal:
+            return FixedSnakeSpeedStrategy()
+        case .hard:
+            return ArythmeticProgressionSnakeSpeedStrategy()
+        case .insane:
+            return GeometricProgressionSnakeSpeedStrategy()
+        }
+    }
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let scene = GameScene(size: view.bounds.size)
+        let scene = GameScene(size: view.bounds.size, appleAppearenceStrategy: appleAppearenceStrategy, snakeSpeedStrategy: snakeSpeedStrategy)
         scene.scaleMode = .resizeFill
         scene.gameDelegate = self
         guard let skView = view as? SKView else { return }
