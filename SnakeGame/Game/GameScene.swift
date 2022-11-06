@@ -17,12 +17,10 @@ final class GameScene: SKScene {
     /// Яблоко в игре.
     var apple: Apple?
     
-    private var appleAppearenceStrategy: AppleAppearenceStrategy
-    private var snakeSpeedStrategy: SnakeSpeedStrategy
+    private var difficultyFacade: DifficultyFacade
     
-    init(size: CGSize, appleAppearenceStrategy: AppleAppearenceStrategy, snakeSpeedStrategy: SnakeSpeedStrategy) {
-        self.appleAppearenceStrategy = appleAppearenceStrategy
-        self.snakeSpeedStrategy = snakeSpeedStrategy
+    init(size: CGSize, difficultyFacade: DifficultyFacade) {
+        self.difficultyFacade = difficultyFacade
         super.init(size: size)
     }
     
@@ -136,7 +134,7 @@ final class GameScene: SKScene {
     
     fileprivate func createApple(){
         guard let view = self.view, let scene = view.scene else { return }
-        if let apple = appleAppearenceStrategy.createApple(in: scene.frame).first {
+        if let apple = difficultyFacade.createApple(in: scene.frame).first {
             self.apple = apple
             self.addChild(apple)
         }
@@ -183,7 +181,7 @@ extension GameScene: SKPhysicsContactDelegate {
         //создаем новое яблоко
         createApple()
         if let snake = snake {
-            snakeSpeedStrategy.increaseSnakeSpeed(snake: snake)
+            difficultyFacade.increaseSnakeSpeed(snake: snake)
         }
     }
     

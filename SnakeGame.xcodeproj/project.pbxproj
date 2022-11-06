@@ -25,6 +25,7 @@
 		84CB6A492916426E009D9499 /* SnakeSpeedStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB6A482916426E009D9499 /* SnakeSpeedStrategy.swift */; };
 		84CB6A4B29164294009D9499 /* AppleAppearenceStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB6A4A29164294009D9499 /* AppleAppearenceStrategy.swift */; };
 		84CB6A4D291642FC009D9499 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB6A4C291642FC009D9499 /* Difficulty.swift */; };
+		84FD35CF29178A1200F5D2B0 /* DifficultyFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD35CE29178A1200F5D2B0 /* DifficultyFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		84CB6A482916426E009D9499 /* SnakeSpeedStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeSpeedStrategy.swift; sourceTree = "<group>"; };
 		84CB6A4A29164294009D9499 /* AppleAppearenceStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAppearenceStrategy.swift; sourceTree = "<group>"; };
 		84CB6A4C291642FC009D9499 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		84FD35CE29178A1200F5D2B0 /* DifficultyFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				846FC3B229153419001629CF /* RecordsCaretaker.swift */,
+				84FD35CE29178A1200F5D2B0 /* DifficultyFacade.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				846FC3B029152427001629CF /* RecordsSingleton.swift in Sources */,
 				846FC3A0291509C3001629CF /* SnakeHead.swift in Sources */,
 				846FC39C29150880001629CF /* Apple.swift in Sources */,
+				84FD35CF29178A1200F5D2B0 /* DifficultyFacade.swift in Sources */,
 				846FC3A2291509F9001629CF /* Snake.swift in Sources */,
 				846FC3AB29150E00001629CF /* StartViewController.swift in Sources */,
 				84CB6A4B29164294009D9499 /* AppleAppearenceStrategy.swift in Sources */,
