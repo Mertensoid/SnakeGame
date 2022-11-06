@@ -14,7 +14,8 @@ protocol GameDelegate: AnyObject {
 }
 
 final class GameViewController: UIViewController {
-
+    @IBOutlet weak var speedLabel: UILabel!
+    
     weak var delegate: GameDelegate?
     var difficulty: Difficulty = .normal
 
@@ -29,6 +30,9 @@ final class GameViewController: UIViewController {
         skView.showsNodeCount = true //показывать количество объектов на экране
         skView.ignoresSiblingOrder = true //включаем произволный порядок рендеринга объектов в узле
         skView.presentScene(scene)
+        scene.snake?.moveSpeed.addObserver(self, options: [.initial, .new], closure: { [weak self] (moveSpeed, _) in
+            self?.speedLabel.text = "Скорость: \(moveSpeed.rounded())"
+        })
     }
     
     // MARK: - UIViewController

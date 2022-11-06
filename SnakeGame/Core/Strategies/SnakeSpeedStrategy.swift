@@ -25,11 +25,11 @@ class ArythmeticProgressionSnakeSpeedStrategy: SnakeSpeedStrategy {
     private let speedIncrease: Double = 5
     
     func increaseSnakeSpeed(snake: Snake) {
-        snake.moveSpeed += speedIncrease
+        snake.moveSpeed.value += speedIncrease
         
         if let maxSpeed = maxSpeed {
-            if snake.moveSpeed > maxSpeed {
-                snake.moveSpeed = maxSpeed
+            if snake.moveSpeed.value > maxSpeed {
+                snake.moveSpeed.value = maxSpeed
             }
         }
     }
@@ -41,11 +41,11 @@ class GeometricProgressionSnakeSpeedStrategy: SnakeSpeedStrategy {
     private let speedMultiplier: Double = 1.1
     
     func increaseSnakeSpeed(snake: Snake) {
-        snake.moveSpeed *= speedMultiplier
+        snake.moveSpeed.value *= speedMultiplier
         
         if let maxSpeed = maxSpeed {
-            if snake.moveSpeed > maxSpeed {
-                snake.moveSpeed = maxSpeed
+            if snake.moveSpeed.value > maxSpeed {
+                snake.moveSpeed.value = maxSpeed
             }
         }
     }

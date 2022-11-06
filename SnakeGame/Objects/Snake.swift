@@ -12,7 +12,7 @@ import SpriteKit
 class Snake: SKShapeNode {
     
     /// Скорость перемещения
-    var moveSpeed = 125.0
+    var moveSpeed = Observable<Double>(125.0)
     
     /// Угол необходимый для расчета направления
     var angle: CGFloat = 0.0
@@ -21,14 +21,12 @@ class Snake: SKShapeNode {
     var body = [SnakeBodyPart]()
     
     // MARK: - Init
-    
     convenience init(atPoint point: CGPoint) {
         self.init()
         self.createHead(at: point)
     }
     
     // MARK: - Methods
-    
     /// Добавляет еще один сегмент змеи
     func addBodyPart() {
         let point = CGPoint(x: body[0].position.x, y: body[0].position.y)
@@ -63,18 +61,16 @@ class Snake: SKShapeNode {
     }
     
     // MARK: - Private
-    
     private func createHead(at point: CGPoint) {
         let head = SnakeHead(atPoint: point)
         body.append(head)
         addChild(head)
     }
 
-    
     private func moveHead(_ head: SnakeBodyPart) {
         //расчитываем смещение точки
-        let dx = CGFloat(moveSpeed) * sin(angle);
-        let dy = CGFloat(moveSpeed) * cos(angle);
+        let dx = CGFloat(moveSpeed.value) * sin(angle);
+        let dy = CGFloat(moveSpeed.value) * cos(angle);
         //смещаем точку назначения головы
         let nextPosition = CGPoint(x: head.position.x + dx, y: head.position.y + dy)
         //действие перемещения головы
